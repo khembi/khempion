@@ -7,8 +7,8 @@ Khempion helps you achieve any goal you set by providing AI-generated helpful ti
 - [Introduction](#introduction)
 - [Features](#features)
 - [Installation](#installation)
-<!-- - [Configuration](#configuration) -->
 - [Usage](#usage)
+<!-- - [Configuration](#configuration) -->
 <!-- - [Testing](#testing) -->
 <!-- - [Deployment](#deployment) -->
 <!-- - [Contributing](#contributing) -->
