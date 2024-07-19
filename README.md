@@ -1,6 +1,6 @@
 # Khempion
 
-Khempion helps you achieve any goal you set by providing AI-generated helpful tips and running follow-ups to ensure you're on track.
+Khempion helps you achieve any goal you set by providing AI-generated helpful tips and running follow-ups to ensure you're on track. - test
 
 ## Table of Contents
 
