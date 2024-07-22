@@ -1,6 +1,6 @@
 # Khempion
 
-Khempion helps you achieve any goal you set by providing AI-generated helpful tips and running follow-ups to ensure you're on track. - test
+Khempion helps you achieve any goal you set by providing AI-generated helpful tips and running follow-ups to ensure you're on track.
 
 ## Table of Contents
 
@@ -54,6 +54,7 @@ Khempion is designed to assist users in achieving their goals. By leveraging AI,
 3. Copy the example environment file and modify it to your needs:
     ```sh
     cp .env.example .env
+    cp .env.example .env.testing
     ```
 4. Generate an application key:
     ```sh
