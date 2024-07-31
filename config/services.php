@@ -17,7 +17,7 @@ return [
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),
     ],
-
+    
     'ses' => [
         'key' => env('AWS_ACCESS_KEY_ID'),
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
@@ -33,6 +33,13 @@ return [
             'bot_user_oauth_token' => env('SLACK_BOT_USER_OAUTH_TOKEN'),
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
+    ],
+
+    'openai' => [
+        'api_key' => env('OPENAI_API_KEY'),
+        'base_uri' => env('OPENAI_BASE_URL'),
+        'model' => env('OPENAI_MODEL'),
+        'default_assistant' => env('OPENAI_DEFAULT_ASSISTANT')
     ],
 
 ];
