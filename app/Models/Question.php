@@ -2,12 +2,16 @@
 
 namespace App\Models;
 
+use App\Observers\QuestionObserver;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
+#[ObservedBy([QuestionObserver::class])]
 class Question extends Model
 {
     use HasFactory;
@@ -49,6 +53,16 @@ class Question extends Model
     public function responses(): HasMany
     {
         return $this->hasMany(Response::class);
+    }
+
+    /**
+     * Get the responses for the question.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function assistant(): HasOne
+    {
+        return $this->hasOne(Assistant::class);
     }
 
     /**

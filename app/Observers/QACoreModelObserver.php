@@ -21,7 +21,7 @@ class QACoreModelObserver
      */
     public function created(Model $model): void
     {
-        $this->logger->log($model, 'info', 'model_created');
+        // $this->logger->log($model, 'info', 'model_created');
     }
  
     /**
@@ -29,10 +29,10 @@ class QACoreModelObserver
      */
     public function updated(Model $model): void
     {
-        $this->logger->log($model, 'info', 'model_updated', [
-            'changes' => $model->getChanges(),
-            'original' => $model->getOriginal(),
-        ]);
+        // $this->logger->log($model, 'info', 'model_updated', [
+        //     'changes' => $model->getChanges(),
+        //     'original' => $model->getOriginal(),
+        // ]);
     }
  
     /**
