@@ -68,10 +68,5 @@ new #[Layout('layouts.guest')] class extends Component
             </x-primary-button>
         </div>
     </form>
-    {{-- <a href="{{ route('google.redirect') }}" class="btn btn-primary"> Login with Google </a> --}}
-    
-        <a href="google/redirect">
-             Sign in with Google
-        </a>
-    
+    <a href="{{ route('google.redirect') }}" class="btn btn-primary"> Login with Google </a>
 </div>

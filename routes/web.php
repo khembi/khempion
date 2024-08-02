@@ -17,9 +17,3 @@ Route::view('profile', 'profile')
 
 require __DIR__.'/auth.php';
 
-// Route::get('/google/redirect', [app\Http\Controllers\GoogleController::class, 'redirectToGoogle'])->name('google.redirect');
-// Route::get('/google/callback', [app\Http\Controllers\GoogleController::class, 'handleGoogleCallback'])->name('google.callback');
-
-// Route::get('/google/redirect',[GoogleController::class,'handleGoogleRedirect'])->name('handleGoogleRedirect');
-// Route::get('/google/callback',[GoogleController::class,'handleGoogleCallback'])->name('handleGoogleCallback');
-
