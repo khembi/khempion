@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
+    "content-hash": "f155a366c2ab633e7e01ca7f4a0a3294",
+=======
     "content-hash": "e7c9a18dc856000854b285651c7f3bd7",
+>>>>>>> main
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -2588,6 +2592,42 @@
             "time": "2024-05-27T13:53:20+00:00"
         },
         {
+<<<<<<< HEAD
+            "name": "laravel/sanctum",
+            "version": "v4.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/sanctum.git",
+                "reference": "9cfc0ce80cabad5334efff73ec856339e8ec1ac1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/sanctum/zipball/9cfc0ce80cabad5334efff73ec856339e8ec1ac1",
+                "reference": "9cfc0ce80cabad5334efff73ec856339e8ec1ac1",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "illuminate/console": "^11.0",
+                "illuminate/contracts": "^11.0",
+                "illuminate/database": "^11.0",
+                "illuminate/support": "^11.0",
+                "php": "^8.2",
+                "symfony/console": "^7.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.6",
+                "orchestra/testbench": "^9.0",
+                "phpstan/phpstan": "^1.10",
+                "phpunit/phpunit": "^10.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Sanctum\\SanctumServiceProvider"
+                    ]
+=======
             "name": "laravel/pulse",
             "version": "v1.2.4",
             "source": {
@@ -2646,11 +2686,16 @@
                     "aliases": {
                         "Pulse": "Laravel\\Pulse\\Facades\\Pulse"
                     }
+>>>>>>> main
                 }
             },
             "autoload": {
                 "psr-4": {
+<<<<<<< HEAD
+                    "Laravel\\Sanctum\\": "src/"
+=======
                     "Laravel\\Pulse\\": "src/"
+>>>>>>> main
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2663,6 +2708,19 @@
                     "email": "taylor@laravel.com"
                 }
             ],
+<<<<<<< HEAD
+            "description": "Laravel Sanctum provides a featherweight authentication system for SPAs and simple APIs.",
+            "keywords": [
+                "auth",
+                "laravel",
+                "sanctum"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel/sanctum/issues",
+                "source": "https://github.com/laravel/sanctum"
+            },
+            "time": "2024-04-10T19:39:58+00:00"
+=======
             "description": "Laravel Pulse is a real-time application performance monitoring tool and dashboard for your Laravel application.",
             "homepage": "https://github.com/laravel/pulse",
             "keywords": [
@@ -2673,6 +2731,7 @@
                 "source": "https://github.com/laravel/pulse"
             },
             "time": "2024-07-08T15:09:50+00:00"
+>>>>>>> main
         },
         {
             "name": "laravel/serializable-closure",
