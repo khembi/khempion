@@ -1,3 +1,3 @@
 <x-welcome-layout>
-    <livewire:welcome.navigation />
+    A LANDING PAGE TO SHOW
 </x-welcome-layout>
