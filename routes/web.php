@@ -1,11 +1,17 @@
 <?php
 
+use App\Http\Controllers\OAuthController;
+use App\Http\Controllers\WelcomeController;
+use App\Models\Question;
+use App\Services\OpenAIService;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/auth/{provider}/redirect', [OAuthController::class, 'redirect'])->name('auth.redirect');
+Route::get('/auth/{provider}/callback', [OAuthController::class, 'callback'])->name('auth.callback');
 
-Route::view('/', 'welcome');
-Route::get('/google/redirect', [App\Http\Controllers\GoogleLoginController::class, 'redirectToGoogle'])->name('google.redirect');
-Route::get('/google/callback', [App\Http\Controllers\GoogleLoginController::class, 'handleGoogleCallback'])->name('google.callback');
+Route::get('/', [WelcomeController::class, 'welcome'])->name('welcome');
+
+Route::get('/styling-guide', [WelcomeController::class, 'styling_guide'])->name('styling_guide');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

@@ -41,7 +41,7 @@ Khempion is designed to assist users in achieving their goals. By leveraging AI,
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/kh3mb1le/khempion.git
+   git clone https://github.com/khembi/khempion.git
    cd khempion
    ```
 
