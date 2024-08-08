@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Filament\Resources\QuestionResource;
 use App\Http\Requests\QuestionRequest;
 use App\Models\Question;
 use Illuminate\Http\Request;
@@ -12,11 +11,17 @@ class QuestionController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(QuestionRequest $request)
+    public function index()
     {
-        return QuestionResource::collection(
-            Question::all()
-        );
+        return view('portal.question.index');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        return view('portal.question.create');
     }
 
     /**
@@ -30,15 +35,23 @@ class QuestionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(QuestionRequest $request, Question $question)
+    public function show(Question $question)
     {
-        return QuestionResource::make($question);
+        return view('portal.question.show');
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(Question $question)
+    {
+        return view('portal.question.edit');
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(string $id)
+    public function update(QuestionRequest $request, Question $question)
     {
         //
     }
@@ -46,7 +59,7 @@ class QuestionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Question $question)
     {
         //
     }
