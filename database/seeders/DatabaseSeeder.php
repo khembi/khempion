@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use App\Models\Action;
 use App\Models\Assessment;
 use App\Models\Attachment;
-use App\Models\LogEntry;
 use App\Models\Question;
 use App\Models\Response;
 use App\Models\User;
@@ -19,6 +18,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        $this->call([
+            OauthSettingSeeder::class,
+        ]);
+
         // Create Filament Admin user
         User::updateOrInsert([
             'email' => 'admin@mail.com',

@@ -68,4 +68,6 @@ new #[Layout('layouts.guest')] class extends Component
             </x-primary-button>
         </div>
     </form>
+
+    <livewire:auth.socialite />
 </div>
