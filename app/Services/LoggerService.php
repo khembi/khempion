@@ -22,7 +22,7 @@ class LoggerService implements LoggerInterface
     public function log(Model $loggable, string $level, string $message, array $context = []): void
     {
         $loggable->logEntries()->create([
-            'user_id' => Auth::check() ? Auth::id() : null,
+            'user_id' => Auth::check() ? Auth::id() : $loggable->user_id,
             'level' => $level,
             'message' => $message,
             'context' => filled($context) ? $context : null
