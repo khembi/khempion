@@ -24,6 +24,7 @@ class Question extends Model
     protected $fillable = [
         'question',
         'meta',
+        'user_id',
     ];
 
     /**
