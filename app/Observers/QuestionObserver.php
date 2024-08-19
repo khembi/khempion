@@ -22,11 +22,11 @@ class QuestionObserver
      */
     public function created(Question $question): void
     {
-        Bus::chain([
-            new AssignAIAssistant($question),
-            new ProcessOpenAIRun($question),
-            new RetrieveMessagesFromAssistant($question),
-        ])->dispatch();
+        // Bus::chain([
+        //     new AssignAIAssistant($question),
+        //     new ProcessOpenAIRun($question),
+        //     new RetrieveMessagesFromAssistant($question),
+        // ])->dispatch();
 
         // Write Log
         $this->logger->log($question, 'NOTICE', 'Question asked', []);
@@ -37,15 +37,7 @@ class QuestionObserver
      */
     public function updated(Question $question): void
     {
-        // Write Log
-        $this->logger->log($question, 'NOTICE', 'Question asked', [
-            'old' => [
-                // TODO
-            ],
-            'new' => [
-                // TODO
-            ]
-        ]);
+        // TODO
     }
 
     /**
