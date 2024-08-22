@@ -23,3 +23,13 @@ test('does_logger_create_when_question_is_edited', function () {
         'message' => 'Question edited'
     ]);
 });
+
+test('does_logger_create_when_question_is_deleted', function () {
+    $question = Question::factory()->create();
+    $question->delete();
+    $this->assertDatabaseHas('log_entries', [
+        'loggable_id' => $question->id,
+        'level' => 'NOTICE',
+        'message' => 'Question deleted'
+    ]);
+});

@@ -37,7 +37,7 @@ class QuestionObserver
      */
     public function updated(Question $question): void
     {
-        // TODO
+        $this->logger->log($question, 'NOTICE', 'Question edited', []);
     }
 
     /**
@@ -46,6 +46,7 @@ class QuestionObserver
     public function deleted(Question $question): void
     {
         //
+        $this->logger->log($question, 'NOTICE', 'Question deleted', []);
     }
 
     /**
