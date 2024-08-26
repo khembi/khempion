@@ -1,19 +1,26 @@
 <?php
-namespace App\Listeners;
 
+namespace App\Listeners;
 use Illuminate\Auth\Events\Login;
-use Illuminate\Auth\Events\Logout;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Queue\InteractsWithQueue;
+
 use App\Models\LogEntry;
 
-class UserLoginLogoutListener
+class UserLoginListener
 {
+    /**
+     * Create the event listener.
+     */
     public function __construct()
     {
         //
     }
 
-    public function handle(Login|Logout $event)
+    /**
+     * Handle the event.
+     */
+    public function handle(Login $event): void
     {
         $user = $event->user;
         $logEntry = new LogEntry();
@@ -21,9 +28,10 @@ class UserLoginLogoutListener
         $logEntry->loggable_type = 'App\Models\User';
         $logEntry->loggable_id = $user->id;
         $logEntry->level = 'NOTICE';
-        $logEntry->message = $event instanceof Login ? 'User logged in' : 'User logged out';
+        $logEntry->message = 'User logged in';
         $logEntry->context = ['id' => $user->id, 'email' => $user->email];
         $logEntry->save();
-        Log::info($event instanceof Login ? 'User logged in' : 'User logged out', ['id' => $user->id, 'email' => $user->email]);
+            // Log::info($event instanceof Login ? 'User logged in' : 'User logged out', ['id' => $user->id, 'email' => $user->email]);
+        
     }
 }

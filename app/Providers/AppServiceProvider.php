@@ -4,7 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Event;
-use App\Listeners\UserLoginLogoutLogger;
+// use App\Listeners\UserLoginListener;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -22,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Event::listen(Login::class, UserLoginLogoutLogger::class);
-        Event::listen(Logout::class, UserLoginLogoutLogger::class);
+        Event::listen(Logout::class, UserLogoutListener::class);
+        Event::listen(Login::class, UserLoginListener::class);
     }
 }
