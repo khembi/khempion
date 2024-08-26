@@ -104,10 +104,16 @@ class User extends Authenticatable
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    // public function logEntries(): HasMany
-    // {
-    //     return $this->hasMany(LogEntry::class);
-    // }
+    public function userLogEntries(): HasMany
+    {
+        return $this->hasMany(LogEntry::class);
+    }
+
+    /**
+     * Get all of the assessment's log entries.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+     */
     public function logEntries(): MorphMany
     {
         return $this->morphMany(LogEntry::class, 'loggable');
