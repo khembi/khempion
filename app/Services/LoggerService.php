@@ -28,4 +28,13 @@ class LoggerService implements LoggerInterface
             'context' => filled($context) ? $context : null
         ]);
     }
+    public function logUserActivity(string $action, array $context = [])
+    {
+        $user = Auth::user();
+        if (!$user) {
+            return; // Handle cases where no user is logged in
+        }
+
+        $this->log($user, 'INFO', "$action: User ID: {$user->id}", $context);
+    }
 }
