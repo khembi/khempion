@@ -2,12 +2,25 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use App\Observers\UserObserver;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+
+
+
 use Illuminate\Notifications\Notifiable;
 
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+
+#[ObservedBy([UserObserver::class])]
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
@@ -91,9 +104,13 @@ class User extends Authenticatable
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function logEntries(): HasMany
+    // public function logEntries(): HasMany
+    // {
+    //     return $this->hasMany(LogEntry::class);
+    // }
+    public function logEntries(): MorphMany
     {
-        return $this->hasMany(LogEntry::class);
+        return $this->morphMany(LogEntry::class, 'loggable');
     }
 
     /**

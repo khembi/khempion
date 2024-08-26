@@ -2,6 +2,7 @@
 
 namespace App\Observers;
 
+use App\Contracts\LoggerInterface;
 use App\Jobs\AssignAIAssistant;
 use App\Jobs\ProcessOpenAIRun;
 use App\Jobs\RetrieveMessagesFromAssistant;
@@ -10,18 +11,25 @@ use Illuminate\Support\Facades\Bus;
 
 class QuestionObserver
 {
+    protected $logger;
+
+    public function __construct(LoggerInterface $logger) {
+        $this->logger = $logger;
+    }
+
     /**
      * Handle the Question "created" event.
      */
     public function created(Question $question): void
     {
-        Bus::chain([
-            new AssignAIAssistant($question),
-            new ProcessOpenAIRun($question),
-            new RetrieveMessagesFromAssistant($question),
-        ])->dispatch();
+        // Bus::chain([
+        //     new AssignAIAssistant($question),
+        //     new ProcessOpenAIRun($question),
+        //     new RetrieveMessagesFromAssistant($question),
+        // ])->dispatch();
 
-
+        // Write Log
+        $this->logger->log($question, 'NOTICE', 'Question asked', []);
     }
 
     /**
@@ -29,7 +37,7 @@ class QuestionObserver
      */
     public function updated(Question $question): void
     {
-        //
+        $this->logger->log($question, 'NOTICE', 'Question edited', []);
     }
 
     /**
@@ -38,6 +46,7 @@ class QuestionObserver
     public function deleted(Question $question): void
     {
         //
+        $this->logger->log($question, 'NOTICE', 'Question deleted', []);
     }
 
     /**

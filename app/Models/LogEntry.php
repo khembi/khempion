@@ -16,6 +16,7 @@ class LogEntry extends Model
      * @var array
      */
     protected $fillable = [
+        'user_id',
         'job_id',
         'level',
         'message',
