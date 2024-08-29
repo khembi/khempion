@@ -2,10 +2,12 @@
 
 namespace App\Providers;
 
+use App\Contracts\LoggerInterface;
 use App\Listeners\Auth\LoginListener;
 use App\Listeners\Auth\LogoutListener;
 use App\Listeners\UserLoginListener;
 use App\Listeners\UserLogoutListener;
+use App\Services\LoggerService;
 use Illuminate\Auth\Events\Authenticated;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Auth\Events\Logout;
