@@ -19,8 +19,8 @@ class AttachmentFactory extends Factory
     {
         return [
             'user_id' => User::factory(),
-            'filename' => fake()->word() . '.' . fake()->fileExtension(),
-            'path' => 'uploads/' . fake()->word() . '.' . fake()->fileExtension(),
+            'filename' => fake()->word().'.'.fake()->fileExtension(),
+            'path' => 'uploads/'.fake()->word().'.'.fake()->fileExtension(),
             'mime_type' => fake()->mimeType(),
         ];
     }

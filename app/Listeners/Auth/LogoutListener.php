@@ -3,8 +3,6 @@
 namespace App\Listeners\Auth;
 
 use Illuminate\Auth\Events\Logout;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
 
 class LogoutListener
 {
@@ -25,7 +23,7 @@ class LogoutListener
         $user->logEntries()->create([
             'user_id' => $user->id,
             'level' => 'NOTICE',
-            'message' => 'User logged out'
+            'message' => 'User logged out',
         ]);
     }
 }

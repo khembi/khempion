@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -36,8 +35,6 @@ class Response extends Model
 
     /**
      * Get the user that owns the response.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function user(): BelongsTo
     {
@@ -46,8 +43,6 @@ class Response extends Model
 
     /**
      * Get the question that owns the response.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function question(): BelongsTo
     {
@@ -56,8 +51,6 @@ class Response extends Model
 
     /**
      * Get the actions for the response.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function actions(): HasMany
     {
@@ -66,8 +59,6 @@ class Response extends Model
 
     /**
      * Get all of the response's attachments.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function attachments(): MorphMany
     {
@@ -76,8 +67,6 @@ class Response extends Model
 
     /**
      * Get all of the response's log entries.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function logEntries(): MorphMany
     {

@@ -24,8 +24,6 @@ class Attachment extends Model
 
     /**
      * Get the user that owns the response.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function user(): BelongsTo
     {
@@ -34,8 +32,6 @@ class Attachment extends Model
 
     /**
      * Get the owning attachable model.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\MorphTo
      */
     public function attachable(): MorphTo
     {

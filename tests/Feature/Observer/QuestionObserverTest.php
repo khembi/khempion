@@ -3,12 +3,12 @@
 use App\Models\Question;
 
 test('does_logger_create_when_question_is_created', function () {
-    $question = Question::factory()->create();  
+    $question = Question::factory()->create();
 
     $this->assertDatabaseHas('log_entries', [
         'loggable_id' => $question->id,
         'level' => 'NOTICE',
-        'message' => 'Question asked'
+        'message' => 'Question asked',
     ]);
 });
 
@@ -20,7 +20,7 @@ test('does_logger_create_when_question_is_edited', function () {
     $this->assertDatabaseHas('log_entries', [
         'loggable_id' => $question->id,
         'level' => 'NOTICE',
-        'message' => 'Question edited'
+        'message' => 'Question edited',
     ]);
 });
 
@@ -30,6 +30,6 @@ test('does_logger_create_when_question_is_deleted', function () {
     $this->assertDatabaseHas('log_entries', [
         'loggable_id' => $question->id,
         'level' => 'NOTICE',
-        'message' => 'Question deleted'
+        'message' => 'Question deleted',
     ]);
 });

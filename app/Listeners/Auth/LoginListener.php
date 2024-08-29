@@ -3,8 +3,6 @@
 namespace App\Listeners\Auth;
 
 use Illuminate\Auth\Events\Login;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
 
 class LoginListener
 {
@@ -25,7 +23,7 @@ class LoginListener
         $user->logEntries()->create([
             'user_id' => $user->id,
             'level' => 'NOTICE',
-            'message' => 'User logged in'
+            'message' => 'User logged in',
         ]);
     }
 }

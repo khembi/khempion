@@ -2,23 +2,15 @@
 
 namespace App\Models;
 
-
 use App\Observers\UserObserver;
 use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
-
-
 use Illuminate\Notifications\Notifiable;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-
 
 #[ObservedBy([UserObserver::class])]
 class User extends Authenticatable
@@ -61,8 +53,6 @@ class User extends Authenticatable
 
     /**
      * Get the questions made by the user.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function questions(): HasMany
     {
@@ -71,8 +61,6 @@ class User extends Authenticatable
 
     /**
      * Get the responses made by the user.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function responses(): HasMany
     {
@@ -81,8 +69,6 @@ class User extends Authenticatable
 
     /**
      * Get the actions made by the user.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function actions(): HasMany
     {
@@ -91,8 +77,6 @@ class User extends Authenticatable
 
     /**
      * Get the assessments made by the user.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function assessments(): HasMany
     {
@@ -101,8 +85,6 @@ class User extends Authenticatable
 
     /**
      * Get the log entries made by the user.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function userLogEntries(): HasMany
     {
@@ -111,8 +93,6 @@ class User extends Authenticatable
 
     /**
      * Get all of the assessment's log entries.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function logEntries(): MorphMany
     {
@@ -121,8 +101,6 @@ class User extends Authenticatable
 
     /**
      * Get the attachments made by the user.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function attachments(): HasMany
     {

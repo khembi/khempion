@@ -34,8 +34,6 @@ class LogEntry extends Model
 
     /**
      * Get the user that owns the log entry.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function user(): BelongsTo
     {

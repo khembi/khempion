@@ -36,8 +36,8 @@ class AssignAIAssistant implements ShouldQueue
         $response = $service->createThreadAndRun($default_assistant, [
             [
                 'role' => 'user',
-                'content' => $this->question->question
-            ]
+                'content' => $this->question->question,
+            ],
         ]);
 
         if (isset($response['thread_id'])) {
@@ -45,7 +45,7 @@ class AssignAIAssistant implements ShouldQueue
                 'assistant_type' => 'openai',
                 'assistant_id' => $default_assistant,
                 'thread_id' => $response['thread_id'],
-                'latest_run_id' => $response['id']
+                'latest_run_id' => $response['id'],
             ]);
         }
     }

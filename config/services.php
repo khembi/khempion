@@ -17,7 +17,7 @@ return [
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),
     ],
-    
+
     'ses' => [
         'key' => env('AWS_ACCESS_KEY_ID'),
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
@@ -39,7 +39,7 @@ return [
         'api_key' => env('OPENAI_API_KEY'),
         'base_uri' => env('OPENAI_BASE_URL'),
         'model' => env('OPENAI_MODEL'),
-        'default_assistant' => env('OPENAI_DEFAULT_ASSISTANT')
+        'default_assistant' => env('OPENAI_DEFAULT_ASSISTANT'),
     ],
 
 ];

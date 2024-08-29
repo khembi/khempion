@@ -19,7 +19,7 @@ class Assistant extends Model
         'assistant_type',
         'assistant_id',
         'thread_id',
-        'latest_run_id'
+        'latest_run_id',
     ];
 
     /**
@@ -33,8 +33,6 @@ class Assistant extends Model
 
     /**
      * Get the messages for the assistant.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function messages(): HasMany
     {

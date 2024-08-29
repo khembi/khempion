@@ -5,15 +5,11 @@ namespace App\Providers;
 use App\Contracts\LoggerInterface;
 use App\Listeners\Auth\LoginListener;
 use App\Listeners\Auth\LogoutListener;
-use App\Listeners\UserLoginListener;
-use App\Listeners\UserLogoutListener;
 use App\Services\LoggerService;
-use Illuminate\Auth\Events\Authenticated;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Auth\Events\Logout;
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Event;
-
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,8 +20,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->bind(LoggerInterface::class, LoggerService::class);
     }
- 
-   
+
     /**
      * Bootstrap any application services.
      */

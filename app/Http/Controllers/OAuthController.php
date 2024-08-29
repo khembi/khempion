@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpKernel\Exception\HttpException;
@@ -21,7 +20,7 @@ class OAuthController extends Controller
         try {
             $oauthUser = get_socialite_provider($provider)->user();
             $user = User::whereEmail($oauthUser->email)->first();
-            
+
             if (! $user) {
                 $user = User::create([
                     'name' => $oauthUser->name,
@@ -30,9 +29,11 @@ class OAuthController extends Controller
             }
 
             Auth::login($user);
+
             return redirect()->to('dashboard');
         } catch (\Exception $e) {
             $errorCode = $e instanceof HttpException ? 'auth.failed' : 'auth.failed.callback';
+
             return redirect()->route('login')->withErrors([__($errorCode)]);
         }
     }

@@ -35,8 +35,6 @@ class Assessment extends Model
 
     /**
      * Get the user that owns the response.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function user(): BelongsTo
     {
@@ -45,8 +43,6 @@ class Assessment extends Model
 
     /**
      * Get the owning assessable model.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\MorphTo
      */
     public function assessable(): MorphTo
     {
@@ -55,8 +51,6 @@ class Assessment extends Model
 
     /**
      * Get all of the assessment's attachments.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function attachments(): MorphMany
     {
@@ -65,8 +59,6 @@ class Assessment extends Model
 
     /**
      * Get all of the assessment's log entries.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function logEntries(): MorphMany
     {

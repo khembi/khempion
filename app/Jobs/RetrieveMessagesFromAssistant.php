@@ -9,7 +9,6 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Support\Facades\Log;
 
 class RetrieveMessagesFromAssistant implements ShouldQueue
 {
@@ -34,8 +33,8 @@ class RetrieveMessagesFromAssistant implements ShouldQueue
     }
 
     /**
-    * Calculate the number of seconds to wait before retrying the job.
-    */
+     * Calculate the number of seconds to wait before retrying the job.
+     */
     public function backoff(): int
     {
         return 10;
@@ -48,16 +47,16 @@ class RetrieveMessagesFromAssistant implements ShouldQueue
     {
         $assistant = $this->question->assistant;
         $response = $service->retrieveMessages($assistant->thread_id);
-        
+
         if (isset($response['data']) && filled($response['data'])) {
-            foreach($response['data'] as $data) {
+            foreach ($response['data'] as $data) {
                 $assistant->messages()->updateOrCreate([
                     'message_id' => $data['id'],
-                    'thread_id' => $data['thread_id']
+                    'thread_id' => $data['thread_id'],
                 ], [
                     'message_type' => 'openai',
                     'role' => $data['role'],
-                    'content' => isset($data['content'][0]['text']['value']) ? $data['content'][0]['text']['value'] : ''
+                    'content' => isset($data['content'][0]['text']['value']) ? $data['content'][0]['text']['value'] : '',
                 ]);
             }
         }

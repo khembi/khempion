@@ -35,8 +35,6 @@ class Action extends Model
 
     /**
      * Get the user that owns the response.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function user(): BelongsTo
     {
@@ -45,8 +43,6 @@ class Action extends Model
 
     /**
      * Get the response that owns the action.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function response(): BelongsTo
     {
@@ -55,8 +51,6 @@ class Action extends Model
 
     /**
      * Get the assessments for the action.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function assessments(): HasMany
     {
@@ -65,8 +59,6 @@ class Action extends Model
 
     /**
      * Get all of the action's attachments.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function attachments(): MorphMany
     {
@@ -75,8 +67,6 @@ class Action extends Model
 
     /**
      * Get all of the action's log entries.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function logEntries(): MorphMany
     {

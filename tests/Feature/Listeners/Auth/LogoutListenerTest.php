@@ -13,7 +13,6 @@ test('logout must dispatch logout event', function () {
     Event::assertDispatched(Logout::class);
 });
 
-
 test('logout must create log entry', function () {
     $user = User::factory()->create();
     Auth::login($user);
@@ -21,6 +20,6 @@ test('logout must create log entry', function () {
     $this->assertDatabaseHas('log_entries', [
         'loggable_id' => $user->id,
         'level' => 'NOTICE',
-        'message' => 'User logged out'
+        'message' => 'User logged out',
     ]);
 });

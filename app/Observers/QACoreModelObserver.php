@@ -9,21 +9,19 @@ class QACoreModelObserver
 {
     protected $logger;
 
-    public function __construct(LoggerInterface $logger) {
+    public function __construct(LoggerInterface $logger)
+    {
         $this->logger = $logger;
     }
 
     /**
      * Handle the Model "created" event.
-     *
-     * @param  Model $model
-     * @return void
      */
     public function created(Model $model): void
     {
         // $this->logger->log($model, 'info', 'model_created');
     }
- 
+
     /**
      * Handle the Model "updated" event.
      */
@@ -34,7 +32,7 @@ class QACoreModelObserver
         //     'original' => $model->getOriginal(),
         // ]);
     }
- 
+
     /**
      * Handle the Model "deleted" event.
      */
@@ -42,7 +40,7 @@ class QACoreModelObserver
     {
         $this->logger->log($model, 'info', 'model_deleted');
     }
- 
+
     /**
      * Handle the Model "restored" event.
      */
@@ -50,7 +48,7 @@ class QACoreModelObserver
     {
         // ...
     }
- 
+
     /**
      * Handle the Model "forceDeleted" event.
      */

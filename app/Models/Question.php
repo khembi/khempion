@@ -38,8 +38,6 @@ class Question extends Model
 
     /**
      * Get the user that owns the response.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function user(): BelongsTo
     {
@@ -48,8 +46,6 @@ class Question extends Model
 
     /**
      * Get the responses for the question.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function responses(): HasMany
     {
@@ -68,8 +64,6 @@ class Question extends Model
 
     /**
      * Get all of the question's attachments.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function attachments(): MorphMany
     {
@@ -78,8 +72,6 @@ class Question extends Model
 
     /**
      * Get all of the question's log entries.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function logEntries(): MorphMany
     {

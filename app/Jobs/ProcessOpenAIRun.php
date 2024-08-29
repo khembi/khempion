@@ -34,8 +34,8 @@ class ProcessOpenAIRun implements ShouldQueue
     }
 
     /**
-    * Calculate the number of seconds to wait before retrying the job.
-    */
+     * Calculate the number of seconds to wait before retrying the job.
+     */
     public function backoff(): int
     {
         return 10;
@@ -49,7 +49,7 @@ class ProcessOpenAIRun implements ShouldQueue
         $assistant = $this->question->assistant;
         $response = $service->retrieveRun($assistant->thread_id, $assistant->latest_run_id);
         if ($response['status'] !== 'completed') {
-            throw new Exception("Run not ready yet", 1);
+            throw new Exception('Run not ready yet', 1);
         }
     }
 }
